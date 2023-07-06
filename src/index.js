@@ -1,13 +1,22 @@
+//1.导入react
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
+import 'antd/dist/reset.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+// 配置axios
+import './plugins/axios';
+// 注入store
+import { Provider } from 'react-redux';
+import store from './store/';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <Provider store={store}>
+      <App />
+    </Provider>
   </React.StrictMode>
 );
 
